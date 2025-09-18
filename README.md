@@ -16,7 +16,6 @@ bash ./env_install/env_install.sh
 bash ./env_install/download_pretrained_models.sh
 ```
 
-```
 
 #### 🐧Linux Setup (RTX 5090 + CUDA 12.8 + Python 3.10 Specific)
 ```
