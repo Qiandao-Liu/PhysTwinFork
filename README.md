@@ -1,71 +1,3 @@
-# PhysTwin: Physics-Informed Reconstruction and Simulation of Deformable Objects from Videos
-
-<span class="author-block">
-<a target="_blank" href="https://jianghanxiao.github.io/">Hanxiao Jiang</a><sup>1,2</sup>,
-</span>
-<span class="author-block">
-<a target="_blank" href="https://haoyuhsu.github.io/">Hao-Yu Hsu</a><sup>2</sup>,
-</span>
-<span class="author-block">
-<a target="_blank" href="https://kywind.github.io/">Kaifeng Zhang</a><sup>1</sup>,
-</span>
-<span class="author-block">
-<a target="_blank" href="https://www.linkedin.com/in/hnyu/">Hsin-Ni Yu</a><sup>2</sup>,
-</span>
-<span class="author-block">
-<a target="_blank" href="https://shenlong.web.illinois.edu/">Shenlong Wang</a><sup>2</sup>,
-</span>
-<span class="author-block">
-<a target="_blank" href="https://yunzhuli.github.io/">Yunzhu Li</a><sup>1</sup>
-</span>
-
-<span class="author-block"><sup>1</sup>Columbia University,</span>
-<span class="author-block"><sup>2</sup>University of Illinois Urbana-Champaign</span>
-
-### [Website](https://jianghanxiao.github.io/phystwin-web/) | [Paper](https://jianghanxiao.github.io/phystwin-web/phystwin.pdf) | [Arxiv](https://arxiv.org/abs/2503.17973)
-
-### Overview
-This repository contains the official implementation of the **PhysTwin** framework.
-
-![TEASER](./assets/teaser.png)
-
-
-### Update
-**This repository will be actively maintained by the authors, with continuous updates introducing new features to inspire further research.**
-
-- **[25.7.22] Remote Control Feature & Bug Fix:** Fixed a deprojection error in the data processing pipeline. Added support for remote control—previously, the interactive playground only responded to physical keyboard input; it now accepts virtual keyboard signals from remote devices as well.
-
-- **[25.4.15] GPU Memory Optimization:** Thanks to user feedback and testing, we've further optimized the code to reduce GPU memory usage in the interactive playground—now requiring only about 2GB in total. Previously, LBS initialization consumed a significant amount of GPU memory; it's now offloaded to the CPU and only needs to run once at startup. Everything runs smoothly as a result.
-
-- **[25.4.8] Optmization Speed:** Regarding the questions on optimization speed, thanks to Nvidia Warp, our differentiable Spring-Mass simulator enables first-order optimization in approximately 5 minutes—and even faster with visualizations disabled—significantly outperforming prior work that typically requires hours. The zero-order, sampling-based optimization (CMA-ES) takes around 12 minutes, depending on the number of epochs. These statistics are based on the stuffed animal experiments without self-collision enabled.
-  
-- **[25.4.4] Material Visualization:** Show the experimental features to visualize the materials approximated from the underlying spring-mass model. (See below for detailed instructions)
-<p align="center">
-  <img src="./assets/material_rope.gif" width="30%">
-  <img src="./assets/material_cloth.gif" width="30%">
-  <img src="./assets/material_sloth.gif" width="30%">
-</p>
-
-
-- **[25.4.3] Multiple Objects Demos:** Show the experimental features for handling collisions among multiple PhysTwins we construct. (See below for detailed instructions)
-<p align="center">
-  <img src="./assets/rope_multiple.gif" width="45%">
-  <img src="./assets/sloth_multiple.gif" width="45%">
-</p>
-
-- **[25.4.3] LBS GPU Memory Fix:** Clear intermediate variables to significantly reduce GPU memory usage in the interactive playground. The sloth case now requires only about 4GB in total. (Pull the latest code to apply the fix.)
-
-- **[25.4.1] Force Visualization:** Visualize the forces applied to objects after optimization, aiding in force analysis from videos. (See below for detailed instructions)
-<p align="center">
-  <img src="./assets/force_rope.gif" width="30%">
-  <img src="./assets/force_cloth.gif" width="30%">
-  <img src="./assets/force_sloth.gif" width="30%">
-</p>
-
-#### Long-Term Plans
-- **Batch Inferencing Support:** Integrate batch inferencing into the underlying SpringMass code, enabling faster rollouts and efficient data generation.
-
-
 ### Setup
 #### 🐧Linux Setup
 ```
@@ -84,18 +16,6 @@ bash ./env_install/env_install.sh
 bash ./env_install/download_pretrained_models.sh
 ```
 
-#### 🪟Windows Setup
-Thanks to @GuangyanCai contributions, now we also have a windows setup codebase in `windows_setup` branch.
-
-#### 🐳Docker Setup
-Thanks to @epiception contributions, we now have Docker support as well.
-```
-export DOCKER_USERNAME="your_alias" # default is ${whoami} (optional)
-chmod +x ./docker_scripts/build.sh
-./docker_scripts/build.sh
-
-# The script accepts architecture version from https://developer.nvidia.com/cuda-gpus as an additional argument
-./docker_scripts/build.sh 8.9+PTX # For NVIDIA RTX 40 series GPUs
 ```
 
 #### 🐧Linux Setup (RTX 5090 + CUDA 12.8 + Python 3.10 Specific)
