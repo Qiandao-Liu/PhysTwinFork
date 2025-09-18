@@ -33,6 +33,7 @@ conda activate phystwin
 chmod +x env_install/post_patch_fixups.sh
 bash ./env_install/5090_env_install.sh
 bash ./env_install/post_patch_fixups.sh
+python scripts/verify_env.py
 
 # Download the necessary pretrained models for data processing
 bash ./env_install/download_pretrained_models.sh
