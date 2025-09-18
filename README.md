@@ -28,11 +28,11 @@ export CUDA_HOME={YOUR_DIR}/cuda
 conda create -y -n phystwin python=3.10
 conda activate phystwin
 
-# Open gaussian_splatting/submodules/diff-gaussian-rasterization/cuda_rasterizer/rasterizer_impl.h and add an include directive for cstdint
-# Forcefully create a symbolic soft link between system libstdc++.so.6 and conda environment libstdc++.so.6 e.g. `ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6 {CONDA_PATH}/envs/phystwin/bin/../lib/libstdc++.so.6`
-
+# Forcefully create a symbolic soft link between system libstdc++.so.6 and conda environment libstdc++.so.6 e.g. `ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6
 # Install the packages (if you only want to explore the interactive playground, you can skip installing TRELLIS, Grounded-SAM-2, Grounding-DINO, RealSense, and SDXL)
+chmod +x env_install/post_patch_fixups.sh
 bash ./env_install/5090_env_install.sh
+bash ./env_install/post_patch_fixups.sh
 
 # Download the necessary pretrained models for data processing
 bash ./env_install/download_pretrained_models.sh
