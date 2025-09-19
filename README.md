@@ -29,10 +29,9 @@ conda create -y -n phystwin python=3.10
 conda activate phystwin
 
 # Forcefully create a symbolic soft link between system libstdc++.so.6 and conda environment libstdc++.so.6 e.g. `ln -sf /usr/lib/x86_64-linux-gnu/libstdc++.so.6
-# Install the packages (if you only want to explore the interactive playground, you can skip installing TRELLIS, Grounded-SAM-2, Grounding-DINO, RealSense, and SDXL)
+# Install the packages
 chmod +x env_install/post_patch_fixups.sh
-bash ./env_install/5090_env_install.sh
-bash ./env_install/post_patch_fixups.sh
+bash ./env_install/50xx_env_install.sh
 
 # Varify env changes
 python scripts/verify_env.py
