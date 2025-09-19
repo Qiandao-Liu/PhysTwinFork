@@ -1,5 +1,5 @@
 ### Setup
-#### 🐧Linux Setup for RTX 30 & 40 Series (RTX 4090)
+#### 🐧Linux Setup
 ```
 # Here we use cuda-12.1
 export PATH={YOUR_DIR}/cuda/cuda-12.1/bin:$PATH
