@@ -1,4 +1,4 @@
-### Setup
+### Setup for PhysTwinFork
 #### 🐧Linux Setup for RTX 50 Series (RTX 50XX + CUDA 12.8 + Python 3.10)
 ```
 # Here we use CUDA 12.8
