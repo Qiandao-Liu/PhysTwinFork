@@ -1,5 +1,5 @@
 ### Setup
-#### 🐧Linux Setup
+#### 🐧Linux Setup for RTX 30 & 40 Series (RTX 4090)
 ```
 # Here we use cuda-12.1
 export PATH={YOUR_DIR}/cuda/cuda-12.1/bin:$PATH
@@ -17,7 +17,7 @@ bash ./env_install/download_pretrained_models.sh
 ```
 
 
-#### 🐧Linux Setup (RTX 5090 + CUDA 12.8 + Python 3.10 Specific)
+#### 🐧Linux Setup for RTX 50 Series (RTX 50XX + CUDA 12.8 + Python 3.10)
 ```
 # Here we use CUDA 12.8
 export PATH={YOUR_DIR}/cuda/bin:$PATH
