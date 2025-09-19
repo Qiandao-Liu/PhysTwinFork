@@ -1,22 +1,4 @@
 ### Setup
-#### 🐧Linux Setup
-```
-# Here we use cuda-12.1
-export PATH={YOUR_DIR}/cuda/cuda-12.1/bin:$PATH
-export LD_LIBRARY_PATH={YOUR_DIR}/cuda/cuda-12.1/lib64:$LD_LIBRARY_PATH
-# Create conda environment
-conda create -y -n phystwin python=3.10
-conda activate phystwin
-
-# Install the packages
-# If you only want to explore the interactive playground, you can skip installing Trellis, Grounding-SAM-2, RealSense, and SDXL.
-bash ./env_install/env_install.sh
-
-# Download the necessary pretrained models for data processing
-bash ./env_install/download_pretrained_models.sh
-```
-
-
 #### 🐧Linux Setup for RTX 50 Series (RTX 50XX + CUDA 12.8 + Python 3.10)
 ```
 # Here we use CUDA 12.8
@@ -35,6 +17,23 @@ bash ./env_install/50xx_env_install.sh
 
 # Varify env changes
 python scripts/verify_env.py
+
+# Download the necessary pretrained models for data processing
+bash ./env_install/download_pretrained_models.sh
+```
+
+#### 🐧Linux Setup
+```
+# Here we use cuda-12.1
+export PATH={YOUR_DIR}/cuda/cuda-12.1/bin:$PATH
+export LD_LIBRARY_PATH={YOUR_DIR}/cuda/cuda-12.1/lib64:$LD_LIBRARY_PATH
+# Create conda environment
+conda create -y -n phystwin python=3.10
+conda activate phystwin
+
+# Install the packages
+# If you only want to explore the interactive playground, you can skip installing Trellis, Grounding-SAM-2, RealSense, and SDXL.
+bash ./env_install/env_install.sh
 
 # Download the necessary pretrained models for data processing
 bash ./env_install/download_pretrained_models.sh
