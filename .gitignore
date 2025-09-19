@@ -210,3 +210,68 @@ cython_debug/
 !assets/arrow_fill_v1.png
 !assets/Picture1.png
 !assets/Picture2.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.eggs/
+dist/
+build/
+
+# C++/CUDA
+*.o
+*.d
+*.so
+*.a
+*.ptx
+*.cubin
+*.dll
+*.lib
+*.exp
+*.pdb
+
+# ninja/cmake
+**/build/
+CMakeCache.txt
+CMakeFiles/
+
+# VSCode / IDE
+.vscode/
+.idea/
+
+# data weight result
+*.pt
+*.pth
+*.npz
+*.pkl
+*.ckpt
+*.onnx
+*.npy
+outputs/
+runs/
+wandb/
+logs/
+
+# ----- subrepos cloned by install scripts -----
+Grounded-SAM-2/
+pytorch3d/
+
+# ----- gaussian splatting build/cache -----
+gaussian_splatting/**/build/
+gaussian_splatting/**/.cache/
+gaussian_splatting/**/__pycache__/
+
+# ---------------- Data & Results ----------------
+data/
+!data/README.md
+
+experiments_optimization/
+!experiments_optimization/README.md
+
+experiments/
+!experiments/README.md
+
+gaussian_output/
+!gaussian_output/README.md
+
